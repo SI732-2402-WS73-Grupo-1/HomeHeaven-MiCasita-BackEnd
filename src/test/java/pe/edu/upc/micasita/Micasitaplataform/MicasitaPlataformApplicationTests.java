@@ -1,13 +1,11 @@
 package pe.edu.upc.micasita.Micasitaplataform;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MicasitaPlataformApplicationTests {
-
-	@Test
-	void contextLoads() {
+public class MicasitaPlataformApplicationTests {
+    public void contextLoads() {
 	}
 
 }
