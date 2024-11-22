@@ -34,11 +34,11 @@ public class PropertyCommandServiceImpl implements PropertyCommandService {
         }
 
         try {
-            propertyRepository.save(property);
+            Property savedProperty = propertyRepository.save(property);
+            return savedProperty.getId();
         } catch (Exception e) {
             throw new IllegalArgumentException("Error while saving property: " + e.getMessage());
         }
-        return property.getId();
     }
 
     @Override
