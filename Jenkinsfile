@@ -21,13 +21,5 @@ pipeline {
                 }
             }
         }
-
-        stage ('Package Stage 2023-2') {
-            steps {
-                withMaven(maven : 'MAVEN_3_6_3') {
-                    bat 'mvn package'
-                }
-            }
-        }
     }
 }
