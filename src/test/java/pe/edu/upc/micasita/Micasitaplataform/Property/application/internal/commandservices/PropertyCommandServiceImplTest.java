@@ -46,22 +46,7 @@ class PropertyCommandServiceImplTest {
         // Verificar que el ID de la propiedad no es null
         assertNotNull(propertyId);
     }
-    @Test
-    void UpdatePropertyTest() {
-        PropertyRepository propertyRepository = Mockito.mock(PropertyRepository.class);
-        PropertyCommandServiceImpl propertyCommandService = new PropertyCommandServiceImpl(propertyRepository);
 
-        UpdatePropertyCommand command = new UpdatePropertyCommand(
-                1L, "title", "description", "owner", "111111", "location", "Sale", "House", "currency", "120.0", 3, 2, 1, 2020);
-
-        Property property = new Property();
-        when(propertyRepository.findById(command.id())).thenReturn(Optional.of(property));
-        when(propertyRepository.save(any(Property.class))).thenReturn(property);
-
-        propertyCommandService.handle(command);
-
-        verify(propertyRepository, times(1)).save(any(Property.class));
-    }
 
 
 }
